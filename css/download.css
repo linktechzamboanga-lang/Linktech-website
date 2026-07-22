@@ -1,0 +1,424 @@
+/* GLOBAL */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+}
+html{
+scroll-behavior:smooth;
+}
+body{
+min-height:100vh;
+background:
+linear-gradient(
+rgba(5,10,25,0.88),
+rgba(5,10,25,0.92)
+),
+url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1920&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+color:white;
+padding:20px;
+}
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+border-radius:15px;
+position:sticky;
+top:0;
+z-index:100;
+}
+header b{
+font-size:24px;
+color:#00f7ff;1
+}
+nav a{
+margin:0 10px;
+color:white;
+text-decoration:none;
+cursor:pointer;
+transition:.3s;
+}
+nav a:hover{
+color:#00f7ff;
+}
+/* HERO */
+.hero{
+display:flex;
+justify-content:center;
+align-items:center;
+height:80vh;
+text-align:center;
+}
+.hero h1{
+font-size:60px;
+background:linear-gradient(
+to right,
+#00f7ff,
+#7d5fff
+);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+.hero p{
+max-width:800px;
+line-height:1.8;
+margin:auto;
+}
+
+/* =========================
+   SEARCH BOX
+========================= */
+
+.search-box{
+
+    max-width:650px;
+    margin:auto;
+
+    display:flex;
+
+    background:#fff;
+
+    border-radius:50px;
+    overflow:hidden;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+
+}
+
+.search-box input{
+
+    flex:1;
+
+    padding:18px;
+
+    border:none;
+    outline:none;
+
+    font-size:16px;
+
+}
+
+.search-box button{
+
+    padding:18px 35px;
+
+    border:none;
+
+    background:#38bdf8;
+    color:#fff;
+
+    cursor:pointer;
+
+    font-size:16px;
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.search-box button:hover{
+
+    background:#0ea5e9;
+
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.section{
+
+    padding:70px 8%;
+
+}
+
+.section-title{
+
+    font-size:35px;
+    color:#38bdf8;
+    margin-bottom:40px;
+
+}
+
+/* =========================
+   SOFTWARE GRID
+========================= */
+
+.software-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+
+}
+
+.card{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    backdrop-filter:blur(12px);
+
+    transition:.35s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.40);
+
+}
+
+.card img{
+
+    width:100%;
+    height:180px;
+
+    object-fit:cover;
+
+    background:#fff;
+
+}
+
+.card-content{
+
+    padding:20px;
+
+}
+
+.card-content h3{
+
+    font-size:22px;
+    margin-bottom:12px;
+
+}
+
+.card-content p{
+
+    color:#cbd5e1;
+    line-height:1.6;
+    margin-bottom:20px;
+
+}
+
+/* =========================
+   DOWNLOAD BUTTON
+========================= */
+
+.download-btn{
+
+    position:relative;
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#38bdf8;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    overflow:hidden;
+
+    transition:.3s;
+
+}
+
+.download-btn:hover{
+
+    background:#0ea5e9;
+
+    transform:translateY(-2px);
+
+}
+
+
+.download-btn.downloading{
+
+    background:#0284c7;
+
+    pointer-events:none;
+
+}
+
+
+.download-btn.success{
+
+    background:#16a34a;
+
+}
+
+
+.btn-text{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+.loader{
+
+    position:absolute;
+
+    width:22px;
+
+    height:22px;
+
+    border:3px solid rgba(255,255,255,.3);
+
+    border-top:3px solid white;
+
+    border-radius:50%;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    animation:spin 1s linear infinite;
+
+    opacity:0;
+
+}
+
+
+.download-btn.downloading .loader{
+
+    opacity:1;
+
+}
+
+
+.download-btn.downloading .btn-text{
+
+    opacity:0;
+
+}
+
+
+@keyframes spin{
+
+    100%{
+
+        transform:
+        translate(-50%,-50%)
+        rotate(360deg);
+
+    }
+
+}
+
+
+/* =========================
+   BADGE
+========================= */
+
+.badge{
+
+    display:inline-block;
+
+    padding:6px 12px;
+
+    border-radius:30px;
+
+    background:#16a34a;
+
+    font-size:12px;
+
+    margin-bottom:15px;
+
+}
+
+
+/* FOOTER */
+footer{
+background:#020617;
+text-align:center;
+padding:25px;
+margin-top:40px;
+color:#9ca3af;
+border-top:1px solid rgba(255,255,255,.06);
+}
+/* ANIMATION */
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(10px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+/* MOBILE */
+@media(max-width:768px){
+header{
+flex-direction:column;
+gap:15px;
+}
+.hero h1{
+font-size:40px;
+}
+nav a{
+display:inline-block;
+margin:5px;
+}
+
+nav a{
+display:inline-block;
+margin:5px;
+}
+width:768px){
+}
+
+.hero h1{
+
+    font-size:40px;
+}
+
+
+.search-box{
+
+    flex-direction:column;
+
+    border-radius:20px;
+
+}
+
+
+.search-box button{
+
+    width:100%;
+
+}

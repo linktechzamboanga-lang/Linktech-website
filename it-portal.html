@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en"
+<head>
+<link rel="stylesheet" href="css/it-portal.css">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Professional IT Service Management Portal</title>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<meta name="description" content="LinkTech Freelance IT Specialist Zamboanga provides IT support, computer troubleshooting, networking, website development, and digital technology solutions for homes and businesses.">
+<meta name="keywords" content="LinkTech, IT Specialist Zamboanga, computer repair, networking, website development, IT support">
+<meta name="theme-color" content="#050a19">
+<meta name="author" content="LinkTech">
+<meta name="robots" content="index, follow">
+<meta name="google-adsense-account" content="ca-pub-6474337076207412">
+<link rel="icon" href="YOUR-LOGO.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FJW2D1ZFZV"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){
+dataLayer.push(arguments);
+}
+gtag('js', new Date());
+gtag('config','G-FJW2D1ZFZV');
+</script>
+<script src="https://apis.google.com/js/api.js"></script>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+<div>
+<b>LinkTech</b>
+</div>
+<nav>
+<a href="index.html">Home</a>
+<a href="customer-support.html">Customer Support</a>
+<a href="download.html">Download</a>
+<a href="services.html">Services</a>
+<a href="it-portal.html">IT Portal</a>
+<a href="Contact.html">Contact us</a>
+<a href="privacy-policy.html">Privacy Policy</a>
+<a href="about.html">about</a>
+</nav>
+</header>
+<div class="login-container" id="loginContainer">
+<div class="logo">
+<i class="fa-solid fa-laptop-medical"></i>
+<h1>
+IT Service Portal
+</h1>
+<p>
+Professional Computer Repair and Technical Support Management System
+</p>
+<div class="policy-box">
+This portal is strictly for authorized IT members only.
+Unauthorized access is prohibited.
+Only registered IT personnel are allowed to access this system.
+</div>
+</div>
+<div class="input-group">
+<label>Email</label>
+<div class="input-box">
+<i class="fa-solid fa-envelope"></i>
+<input type="email"
+id="email"
+placeholder="Enter Email">
+</div>
+</div>
+<div class="input-group">
+<label>Password</label>
+<div class="input-box">
+<i class="fa-solid fa-lock"></i>
+<input type="password"
+id="password"
+placeholder="Enter Password">
+</div>
+</div>
+<button class="login-btn"
+onclick="login()">
+<i class="fa-solid fa-right-to-bracket"></i>
+Member Login
+</button>
+<div class="error" id="error"></div>
+</div>
+
+
+<!-- =========================
+DASHBOARD
+========================= -->
+
+
+<div class="dashboard" id="dashboard">
+
+
+<div class="topbar">
+
+
+<div>
+
+<h2>
+IT Service Dashboard
+</h2>
+
+
+<div class="role-badge" id="userRole">
+
+Role: Guest
+
+</div>
+
+
+</div>
+
+
+
+<button class="logout-btn"
+onclick="logout()">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</button>
+
+
+</div>
+
+
+<button class="add-btn"
+id="addBtn"
+onclick="toggleForm()">
+
+<i class="fa-solid fa-plus"></i>
+
+Add Customer
+
+</button>
+
+
+
+<!-- STATS CONTINUE IN PART 3 -->
+  
+  
+<!-- =========================
+STATS
+========================= -->
+
+<div class="stats-grid" id="statsGrid">
+
+
+<div class="stat-card">
+
+<div class="icon">
+<i class="fa-solid fa-users"></i>
+</div>
+
+<h3>Total Customers</h3>
+
+<div class="amount" id="totalCustomers">
+0
+</div>
+
+</div>
+
+
+
+<div class="stat-card">
+
+<div class="icon">
+<i class="fa-solid fa-screwdriver-wrench"></i>
+</div>
+
+<h3>Total Repair Fee</h3>
+
+<div class="amount" id="totalRepair">
+₱0
+</div>
+
+</div>
+
+
+
+<div class="stat-card">
+
+<div class="icon">
+<i class="fa-solid fa-car-side"></i>
+</div>
+
+<h3>Total Fare Fee</h3>
+
+<div class="amount" id="totalFare">
+₱0
+</div>
+
+</div>
+
+
+
+<div class="stat-card">
+
+<div class="icon">
+<i class="fa-solid fa-money-bill-wave"></i>
+</div>
+
+<h3>Total Income</h3>
+
+<div class="amount" id="totalIncome">
+₱0
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<!-- =========================
+SEARCH
+========================= -->
+
+
+<div class="search-container">
+
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+
+<input type="text"
+id="searchInput"
+placeholder="Search customer name..."
+onkeyup="searchCustomer()">
+
+
+
+</div>
+
+
+
+<!-- =========================
+CUSTOMER FORM
+========================= -->
+
+
+<div class="form-section"
+id="formSection">
+
+
+<div class="form-grid">
+
+
+
+<input type="text"
+id="name"
+placeholder="Customer Name">
+
+
+
+<input type="text"
+id="address"
+placeholder="Address">
+
+
+
+<input type="datetime-local"
+id="schedule">
+
+
+
+<input type="text"
+id="contact"
+placeholder="Contact Number">
+
+
+
+<input type="email"
+id="customerEmail"
+placeholder="Customer Email">
+
+
+
+<select id="repair">
+
+<option value="">
+Repair Type
+</option>
+
+<option>
+Computer Repair
+</option>
+
+<option>
+Laptop Repair
+</option>
+
+<option>
+Printer Repair
+</option>
+
+<option>
+Network Troubleshooting
+</option>
+
+<option>
+Software Installation
+</option>
+
+<option>
+Virus Removal
+</option>
+
+<option>
+Hardware Replacement
+</option>
+
+<option>
+System Upgrade
+</option>
+
+
+</select>
+
+
+
+<input type="text"
+id="assignIT"
+placeholder="Assign IT Personnel">
+
+
+
+<select id="status">
+
+
+<option>
+Pending
+</option>
+
+
+<option>
+Ongoing
+</option>
+
+
+<option>
+Completed
+</option>
+
+
+</select>
+
+
+
+<input type="number"
+id="repairPrice"
+placeholder="Repair Fee">
+
+
+
+<input type="number"
+id="farePrice"
+placeholder="Fare Fee">
+
+
+
+</div>
+
+
+
+<button class="save-btn"
+onclick="saveCustomer()">
+
+
+<i class="fa-solid fa-floppy-disk"></i>
+
+Save Customer
+
+
+</button>
+
+
+
+</div>
+
+
+
+
+<!-- =========================
+CUSTOMER TABLE
+========================= -->
+
+
+<div class="table-container">
+
+
+<table>
+
+
+<thead>
+
+
+<tr>
+
+<th>Name</th>
+
+<th>Address</th>
+
+<th>Schedule</th>
+
+<th>Contact</th>
+
+<th>Email</th>
+
+<th>Repair</th>
+
+<th>Assigned IT</th>
+
+<th>Status</th>
+
+<th>Repair Fee</th>
+
+<th>Fare Fee</th>
+
+<th id="actionHeader">
+Actions
+</th>
+
+
+</tr>
+
+
+</thead>
+<tbody id="customerTable">
+</tbody>
+</table>
+</div>
+</div>
+<script src='js/it-portal.js'></script>
+
+</body>
+
+</html>

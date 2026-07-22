@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="css/customer.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LinkTech Customer Support System</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<meta name="keywords" content="LinkTech, IT Specialist Zamboanga, computer repair, networking, website development, IT support">
+<meta name="theme-color" content="#050a19">
+<meta name="author" content="LinkTech">
+<meta name="robots" content="index, follow">
+<meta name="google-adsense-account" content="ca-pub-6474337076207412">
+<link rel="icon" href="YOUR-LOGO.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FJW2D1ZFZV"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){
+dataLayer.push(arguments);
+}
+gtag('js', new Date());
+gtag('config','G-FJW2D1ZFZV');
+</script>
+<script src="https://apis.google.com/js/api.js"></script>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+<div>
+<b>LinkTech</b>
+</div>
+<nav>
+<a href="index.html">Home</a>
+<a href="customer-support.html">Customer Support</a>
+<a href="download.html">Download</a>
+<a href="services.html">Services</a>
+<a href="it-portal.html">IT Portal</a>
+<a href="Contact.html">Contact us</a>
+<a href="privacy-policy.html">Privacy Policy</a>
+<a href="about.html">about</a>
+</nav>
+</header>
+<section class="hero" id="home">
+<div>
+<h1>
+Customer Support
+</h1>
+<h2>
+Freelance IT Specialist Zamboanga
+</h2>
+</section>
+<div class="topbar">
+<button onclick="openCustomerView()">
+View My Data
+</button>
+<button onclick="toggleLogin()">
+Admin Login
+</button>
+</div>
+<div class="container">
+<div class="grid">
+<div class="box">
+<h3>
+Submit Concern
+</h3>
+<div id="googleLoginButton"></div>
+<div id="userStatus" class="commentBox">
+Please sign in using Google before submitting concern.
+</div>
+<input 
+id="name"
+placeholder="Full Name"
+readonly>
+<input 
+id="email"
+type="email"
+placeholder="Google Email"
+readonly>
+<input 
+id="address"
+placeholder="Complete Address">
+<input 
+id="contact"
+type="number"
+placeholder="09XXXXXXXXX">
+<textarea 
+id="problem"
+placeholder="Describe your concern or problem...">
+</textarea>
+<button onclick="submitConcern()">
+Submit Concern
+</button>
+<div id="msg"></div>
+</div>
+<div class="box">
+<h3>
+Comments
+</h3>
+<input 
+id="cemail"
+type="email"
+placeholder="Google Email"
+readonly>
+<textarea 
+id="ccomment"
+placeholder="Write your comment...">
+</textarea>
+<button onclick="submitComment()">
+Post Comment
+</button>
+<div id="commentList"></div>
+</div>
+</div>
+<div id="customerView" class="box">
+<h3>
+My Submitted Data
+</h3>
+<input 
+id="searchEmail"
+placeholder="Enter your Google Email">
+<button onclick="loadCustomerData()">
+Search
+</button>
+<div id="customerData"></div>
+</div>
+<!-- ADMIN LOGIN POPUP -->
+<div id="adminPopup">
+<div class="loginBox" id="loginBox">
+<h3>
+Admin Login
+</h3>
+<input 
+id="adminEmail"
+placeholder="Admin Email">
+<input 
+id="adminPassword"
+type="password"
+placeholder="Password">
+<button onclick="loginAdmin()">
+Login
+</button>
+<button onclick="closeAdmin()">
+Close
+</button>
+</div>
+</div>
+<div class="box" id="adminPanel">
+<h3>
+Admin Panel
+</h3>
+<button onclick="loadAdmin()">
+Refresh Data
+</button>
+<br><br>
+<h3>
+Download Customer Data PDF
+</h3>
+<input 
+type="date"
+id="pdfDate">
+<button onclick="downloadPDFByDate()">
+Download PDF
+</button>
+<div style="overflow:auto;">
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Contact</th>
+<th>Problem</th>
+<th>Status</th>
+<th>Timestamp</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody id="adminTable"></tbody>
+</table>
+</div>
+</div>
+<div class="modal" id="modal">
+<div class="modal-content">
+<p id="modalText"></p>
+<button onclick="closeModal()">
+OK
+</button>
+</div>
+</div>
+<!-- GOOGLE ADS -->
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6474337076207412"
+crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+style="display:block"
+data-ad-client="ca-pub-6474337076207412"
+data-ad-slot="2955887271"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins>
+<script src='js/customer-support.js'>
+</script>
+<script>
+
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<footer>
+<p>
+
+© 2026 LinkTech Freelance IT Specialist Zamboanga |
+
+All Rights Reserved
+</p>
+</footer>
+</div>
+</body>
+</html>
